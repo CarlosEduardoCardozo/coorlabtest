@@ -110,7 +110,7 @@ User
             class="h-12"
           />
           <button
-            @click="addToWishlist(selectedOption)"
+            @click="addToWishlistAndCloseModal(selectedOption)"
             class="px-4 py-2 mt-4 bg-blue-600 text-white font-semibold rounded hover:bg-sky-950 focus:outline-none focus:bg-blue-700"
           >
             Adicionar à Lista de Desejos
@@ -152,16 +152,22 @@ export default defineComponent({
       showModal.value = false;
     };
 
-    const addToWishlist = (option) => {
+    const addToWishlistAndCloseModal = (option) => {
       wishlistStore.addToWishlist(option);
+      closeModal();
     };
+
+    // const addToWishlist = (option) => {
+    //   wishlistStore.addToWishlist(option);
+    // };
 
     return {
       showModal,
       selectedOption,
       openModal,
       closeModal,
-      addToWishlist,
+      // addToWishlist,
+      addToWishlistAndCloseModal,
     };
   },
 });

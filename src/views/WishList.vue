@@ -37,20 +37,15 @@
                 </p>
               </div>
             </div>
-
-            <button
-              @click="removeWishlistItem(item.id)"
-              class="wishlist-item-remove px-2 py-1 bg-red-600 text-white font-semibold hover:bg-red-700 text-xs"
-            >
-              Remover
-            </button>
+          
           </li>
         </ul>
       </div>
 
+      
       <router-link
         to="/tickets"
-        class="mt-2 px-2 py-1 w-52 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 text-xs flex justify-center items-center mx-auto"
+        class="mt-2 px-2 py-1 h-10 w-52 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 text-xs flex justify-center items-center mx-auto"
       >
         Voltar para Tickets
       </router-link>
@@ -71,13 +66,8 @@ export default defineComponent({
   setup() {
     const wishlistStore = useWishlistStore();
 
-    const removeWishlistItem = (itemId) => {
-      wishlistStore.removeWishlistItem(itemId);
-    };
-
     return {
       wishlist: wishlistStore.wishlist,
-      removeWishlistItem,
     };
   },
 });
@@ -95,5 +85,39 @@ export default defineComponent({
 
 .wishlist-item-remove:hover {
   background-color: #c53030;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 </style>

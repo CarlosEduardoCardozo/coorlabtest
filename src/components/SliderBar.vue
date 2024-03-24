@@ -2,7 +2,7 @@
   <!-- component -->
   <div class="flex min-h-screen flex-row bg-gray-100 text-gray-800">
     <aside
-      class="sidebar w-56 -translate-x-full transform bg-slate-800 p-4 transition-transform duration-150 ease-in md:translate-x-0 md:shadow-md"
+      class="sidebar w-60 -translate-x-full transform bg-slate-800 p-4 transition-transform duration-150 ease-in md:translate-x-0 md:shadow-md"
     >
       <div class="my-4 w-full border-b-4 border-indigo-100 text-center">
         <div class="py-4 px-6 flex items-center">
@@ -13,11 +13,11 @@
         </div>
       </div>
       <div class="my-8">
-        <span class="p-4">
-          <span class="text-white text-sm">Calculadora de Viagem</span>
-        </span>
+        <router-link to="/tickets" class="text-white flex items-center">
+          Calculadora de Viagem
+        </router-link>
       </div>
-      <router-link to="/wishlist" class="text-white mt-4 flex items-center">
+      <router-link to="/wishlist" class="text-white flex items-center">
         Lista de Desejos
         <span
           class="ml-auto bg-blue-500 text-white font-bold rounded-full px-2"

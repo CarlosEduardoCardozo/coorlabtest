@@ -72,7 +72,7 @@ export default {
   methods: {
     async getTickets() {
       try {
-        const response = await axios.get("http://localhost:8000/tickets/");
+        const response = await axios.get("http://127.0.0.1:3000/tickets/");
         this.tickets = response.data;
         this.transports = response.data;
       } catch (error) {
